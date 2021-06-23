@@ -1,0 +1,13 @@
+{
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "exact": true,
+      "forcePublish": true,
+      "private": false
+    }
+  },
+  "version": "2.13.4",
+  "npmClient": "yarn",
+  "useWorkspaces": true
+}

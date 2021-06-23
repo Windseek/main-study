@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigator render correctly 1`] = `
+<navigator
+  hoverClassName="navigator-hover"
+  hoverStartTime={50}
+  hoverStayTime={400}
+  hoverStopPropagation={false}
+  openType="navigate"
+  url="url"
+/>
+`;

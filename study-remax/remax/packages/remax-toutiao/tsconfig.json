@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "esm",
+    "lib": ["es2015"],
+    "declaration": true,
+    "jsx": "react",
+    "types": ["@types/jest", "@types/node"],
+    "downlevelIteration": true
+  },
+  "include": ["src/**/*", "typings/**/*"],
+  "exclude": ["cjs", "esm"]
+}
