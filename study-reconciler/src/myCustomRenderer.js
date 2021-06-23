@@ -5,7 +5,7 @@ function traceWrap(hostConfig) {
   Object.keys(hostConfig).map(key => {
     const func = hostConfig[key];
     traceWrappedHostConfig[key] = (...args) => {
-      console.trace(key);
+      // console.log(key);
       return func(...args);
     };
   });
@@ -17,13 +17,15 @@ const childHostContext = {};
 
 const hostConfig = {
   now: Date.now,
-  getRootHostContext: () => {
-    return rootHostContext;
+  getRootHostContext: (r) => {
+    return r;
   },
-  prepareForCommit: () => {},
+  prepareForCommit: (e) => {
+    console.log('prepareForCommitprepareForCommitprepareForCommitprepareForCommit', e);
+  },
   resetAfterCommit: () => {},
-  getChildHostContext: () => {
-    return childHostContext;
+  getChildHostContext: (c) => {
+    return c;
   },
   shouldSetTextContent: (type, props) => {
     return typeof props.children === 'string' || typeof props.children === 'number';
@@ -65,9 +67,11 @@ const hostConfig = {
     parent.appendChild(child);
   },
   prepareUpdate(domElement, oldProps, newProps) {
+    console.log('prepareUpdate')
     return true;
   },
   commitUpdate(domElement, updatePayload, type, oldProps, newProps) {
+    console.log('commitUpdate')
     Object.keys(newProps).forEach(propName => {
       const propValue = newProps[propName];
       if (propName === 'children') {
